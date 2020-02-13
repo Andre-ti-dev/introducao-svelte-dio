@@ -1,0 +1,11 @@
+  import { onMount, onDestroy, beforeUpdate, afterUpdate } from "svelte";
+
+  onMount(() => {
+    console.log("Montado");
+  });
+
+  beforeUpdate(() => {});
+
+  afterUpdate(() => {});
+
+  onDestroy(() => {});

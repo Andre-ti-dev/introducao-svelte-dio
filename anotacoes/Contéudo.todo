@@ -1,0 +1,30 @@
+# Svelte
+
+Componentes:
+    ✔ Estrutura @done(19-11-12 23:38)
+    ✔ Template @done(19-11-12 23:38)
+    ✔ Estilização @done(19-11-12 23:38)
+    ✔ Lógica @done(19-11-12 23:38)
+    ✔ Ciclos de vida @done(19-11-12 23:38)
+
+Template:
+    ✔ Renderização condicional @done(19-11-12 23:44)
+    ✔ Renderização através de coleção @done(19-11-12 23:55)
+    ✔ Renderização de Promises @done(19-11-13 00:17)
+
+Estado:
+    ✔ Gerenciamento de estado @done(19-11-13 00:44)
+
+Para alterar se a aplicação ira utilizar sass ou less é necessário 
+passar o lang="scss" como atributo do <style>
+
+React => Virtual DOM
+    Reconciliação => Pegar o novo estado e atualizar a VIEW
+    Ou seja cria um DOM em memória e conforme são realizadas ações
+    ele faz um diff entre o virtual DOM e o DOM real pra saber oque deve
+    atualizar, porém dependendo da aplicação esse método pode utilizar
+    muito processamento.
+
+Svelte não utiliza virtual DOM, ele consegue em build time identificar
+todos os elementos do DOM que poderão sofrer modificação e economizando 
+muito processamento já que tudo isso é feito já no build e não em runtime.

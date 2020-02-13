@@ -1,0 +1,18 @@
+<script>
+  const show = false;
+  const age = 18;
+</script>
+
+{#if show}
+  <h1>Svelte</h1>
+{:else}
+  <h2>É top</h2>
+{/if}
+
+{#if age >= 18}
+  <h2>Maior de idade</h2>
+{:else if age > 60}
+  <h3>Você é idoso</h3>
+{:else}
+  <h3>Menor de idade</h3>
+{/if}

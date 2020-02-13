@@ -1,0 +1,47 @@
+#1
+<script>
+  import { onMount } from "svelte";
+  import { getAll } from "../apis/numbers";
+
+  let buscou = false;
+  let numbers = [];
+
+  onMount(() => {
+    getAll().then(result => {
+      numbers = result;
+      buscou = true;
+    });
+  });
+</script>
+
+{#if buscou}
+  <ul>
+    {#each numbers as n}
+      <li>{n}</li>
+    {:else}
+      <p>Lista vazia</p>
+    {/each}
+  </ul>
+{:else}
+  <p>Buscando dados...</p>
+{/if}
+
+
+#2 
+<script>
+  import { getAll } from "../apis/numbers";
+</script>
+
+{#await getAll()}
+  <p>Buscando dados...</p>
+{:then numbers}
+  <ul>
+    {#each numbers as n}
+      <li>{n}</li>
+    {:else}
+      <p>Sem dados</p>
+    {/each}
+  </ul>
+{:catch error}
+  <h1>{error}</h1>
+{/await}

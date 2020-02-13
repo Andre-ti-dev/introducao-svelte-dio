@@ -1,0 +1,24 @@
+# Passo a passo do projeto
+
+Anotações: 
+    ☐ Instalar o degit para clonar o template sem o historico do git do repo
+    ☐ Rodar npx degit sveltejs/template nomeDaPasta para criar a pasta com os arquivos base
+    ☐ Instalar dependências do sveltejs npm install
+    ☐ Criar Todo.svelte em src
+    ☐ Importar o Todo em App.svelte "import Todo from "./components/Todo.svelte";"
+    ☐ Criar um template (html simples) em Todo.svelte para exibir algum conteúdo
+    ☐ Por padrão os estilos dos componentes funcionam apenas para o próprio componente
+    ☐ Para criar um estilo global é necessário usar o seletor :global(seletor) { estilos }
+    ☐ Por padrão o svelte usa css, mas é possível configurar sass e less
+    ☐ Podemos utilizar <script> Lógicas </script> para inserir lógicas em js no componente svelte
+    ☐ Podemos utilizar <style> estilos </style> para inserir estilos css ao componente
+    ☐ Tanto scripts como styles podem ser inseridos em um componente.svelte seguindo a estrutura script, style e template
+    ☐ Utiliza-se {variavel} para exibir contéudo de variáveis
+    ☐ Podemos utilizar todo tipo de código js no script de nossos componentes svelte
+    Ciclos de vida do Svelte:
+        ☐ Para utilizar os eventos de ciclo de vida é necessário importa-los
+        ☐ onMount
+        ☐ beforeUpdate
+        ☐ afterUpdate
+        ☐ onDestroy
+    ☐ 

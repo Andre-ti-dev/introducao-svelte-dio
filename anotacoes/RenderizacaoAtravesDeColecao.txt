@@ -1,0 +1,15 @@
+<script>
+  const numbers = [];
+  // const numbers= [1, 2, 3, 4, 5];
+</script>
+
+<ul>
+  {#each numbers as number, index (number)}
+    <li>{index} - {number}</li>
+  {:else}
+    <p>Não existem itens para exibir</p>
+  {/each}
+</ul>
+
+# O (number) é como um identificador para o svelte para que ele saiba que
+# que elementos estão na tela e fique mais rápido para realizar atualizações

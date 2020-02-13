@@ -1,0 +1,50 @@
+#1 
+<script>
+  import { user } from "../store/user";
+  import { onMount, onDestroy } from "svelte";
+
+  let name = "";
+  let unsubscribe;
+
+  // Ciclo de vida de criação do componente
+  onMount(() => {
+    // Ouvindo (listener) alterações eventos na store user e recebendo o metodo unsubscribe para parar a escuta
+    unsubscribe = user.subscribe(value => {
+      name = value.name;
+    });
+  });
+
+  // Ciclo de vida de remoção do componente
+  onDestroy(() => {
+    // Removendo escuta (listener) de eventos na store user
+    if (unsubscribe) {
+      unsubscribe();
+    }
+  });
+
+  const handleUpdateUser = () => {
+    user.set({ name: "André Luiz" });
+  };
+</script>
+
+<h1>Nome do usuário logado: {name}</h1>
+<button on:click={handleUpdateUser}>Atualiza usuário</button>
+
+#2 Menos código
+<script>
+  import { user } from "../store/user";
+  const handleUpdateUser = () => {
+    user.set({ name: "André Luiz" });
+  };
+</script>
+
+<h1>Nome do usuário logado: {$user.name}</h1>
+<button on:click={handleUpdateUser}>Atualiza usuário</button>
+
+Todo o trabalho de fazer o subscribe e unsubscribe e feito automaticamente com o $store.propriedade
+
+Diferença do set e update:
+o set alteramos o valor de uma propriedade na store, já o metodo update retorna uma nova store
+user.update(oldValue => ({
+      name: `${oldValue.name} Luiz`
+    }));
